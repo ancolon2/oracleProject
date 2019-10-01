@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../CitrixProject/.idea/CitrixProject.iml" filepath="$PROJECT_DIR$/../CitrixProject/.idea/CitrixProject.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/PycharmProjects/Django/.idea/Django.iml" filepath="$USER_HOME$/Documents/PycharmProjects/Django/.idea/Django.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OracleProject.iml" filepath="$PROJECT_DIR$/.idea/OracleProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PythonWeb/.idea/PythonWeb.iml" filepath="$PROJECT_DIR$/../PythonWeb/.idea/PythonWeb.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/PycharmProjects/pythonStarter/.idea/pythonStarter.iml" filepath="$USER_HOME$/Documents/PycharmProjects/pythonStarter/.idea/pythonStarter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../web_blog/.idea/web_blog.iml" filepath="$PROJECT_DIR$/../web_blog/.idea/web_blog.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container page-form">
+    <form id="domain-form" action="/api/domain" method="post">
+     <div class="form-group">
+        <label for="domain">Domain</label>
+        <input type="text" id="domain" class="form-control" name="domain">
+     </div>
+        <button type="submit" class="btn btn-success">Pull MX Records</button>
+    </form>
+</div>
+{% endblock %}
