@@ -31,12 +31,15 @@ Serving Flask app "app" (lazy loading)
 If Running from docker
 
 1) First make sure Docker Desktop is up and running. Instructions are here https://docs.docker.com/v17.09/docker-for-mac/install/
-2) In the root directory execute the below commmands
+2) In a terminal command line pull the project from my docker hub repository
 
-docker build --tag python-domain-app .
-docker run --name python-domain-app -p 5000:5000 python-domain-app
+docker pull ancolon/python-domain-mx-project
 
-3) Open a web browser and go to URL http://127.0.0.1:5000/ . This is the homepage of the application
+3) Start and run a container from the image
+
+docker container run -d --name provide-name -p 5000:5000 ancolon/python-domain-mx-project
+
+4) Open a web browser and go to URL http://127.0.0.1:5000/ . This is the homepage of the application
 
 If Running from Shell
 
