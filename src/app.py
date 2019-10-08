@@ -28,7 +28,7 @@ def get_domain():
     except NXDOMAIN:
         return render_template('error.html', domain=domain)
     mxrecords = {str(data): str(data.exchange) for data in mxquery}
-    json_data = json.dumps(mxrecords)
+    json_data = json.dumps(mxrecords, sort_keys=True)
     return render_template('domain.html', domain=domain, mxrecords=json_data)
 
 if __name__ == '__main__':
