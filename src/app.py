@@ -16,20 +16,29 @@ app.secret_key = "andrew"
 def home_template():
     return render_template('home.html')
 
-#Route to domain API - http://127.0.0.1:5000/api/domain
-#Pulls MX Records vis DNS Query
-#Converts dictionary MX records to json format
-#Redirects to Error page (error.html) is Domain cannot resolve
 @app.route('/api/domain', methods=['POST'])
-def get_domain():
+def post_domain(domain=None):
     domain = request.form['domain']
     try:
         mxquery = dns.resolver.query(domain, 'MX')
     except NXDOMAIN:
         return render_template('error.html', domain=domain)
     mxrecords = {str(data): str(data.exchange) for data in mxquery}
-    json_data = json.dumps(mxrecords)
+    json_data = json.dumps(mxrecords, sort_keys=True)
+    return render_template('domain.html', domain=domain, mxrecords=json_data), 200
+
+@app.route('/api/domain/<string:domain>', methods=['GET'])
+def get_domain(domain=None):
+    if domain is not None:
+        try:
+            mxquery = dns.resolver.query(domain, 'MX')
+        except NXDOMAIN:
+            return render_template('error.html', domain=domain), 500
+    else:
+        return render_template('error.html', domain=domain), 500
+    mxrecords = {str(data): str(data.exchange) for data in mxquery}
+    json_data = json.dumps(mxrecords, sort_keys=True)
     return render_template('domain.html', domain=domain, mxrecords=json_data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")
